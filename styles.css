@@ -1,0 +1,97 @@
+:root{
+    --bg_color: #001122;
+    --primary_color: #155e75;
+    --border_radius: 8px;
+    --text_color: #fff;
+    --border_color: #7fb7c9;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    /* horizontally centered */
+    justify-content: center;
+    /* vertically Centered */
+    align-items: center;
+    background-color: var(--bg_color);
+}
+.box{
+    background-color: var(--primary_color);
+    padding: 30px;
+    width: 400px;
+    border-radius: var(--border_radius);
+}
+.qr-header h1{
+    font-size: 26px;
+    text-align: center;
+    color: var(--text_color);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+.qr-header input{
+    width: 100%;
+    margin-block: 12px;
+}
+.qr-header input, select{
+    padding: 8px;
+    border-radius: var(--border_radius);
+    font-size: 18px;
+    outline: none;
+    border: 2px solid var(--border_color);
+}
+.qr-header label{
+    color: var(--text_color);
+    font-size: 20px;
+}
+.qr-header div{
+    display: flex;
+    justify-content: space-between;
+}
+.qr-footer{
+    
+    display: flex;
+    justify-content: center;
+}
+.qr-footer a{
+    background-color: var(--text_color);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 14px 36px;
+    margin-inline: 2px;
+    color: var(--primary_color);
+    font-weight: 600;
+    border-radius: var(--border_radius);
+}
+.qr-body{
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+/* helps to maintain the overall structure of the web page on generation of QR of larger sizes */
+/* it kind of fixes the size to a max limit even on changing the size */
+.qr-body img{ 
+    max-width: 100%;
+    max-height: 100%;
+    margin-block: 10px;
+    padding: 20px;
+    border: 0.4px solid var(--border_color);
+    border-radius: var(--border_radius);
+}
+/* to make our website responsive in nature */
+
+@media screen and (max-width:520px){
+    .box{
+        width: 80%;
+    }
+    /* reduced the padding & font size */
+    .qr-footer a{ 
+        padding: 12px;
+        font-size: 16px;
+    }
+}
